@@ -1,4 +1,5 @@
 ﻿using UnityEditor;
+using UnityEngine;
 
 namespace Kogane
 {
@@ -15,6 +16,8 @@ namespace Kogane
 
         public bool OpenCheck()
         {
+            if ( Application.isBatchMode ) return true;
+
             return EditorUtility.DisplayDialog
             (
                 title: m_title,
@@ -26,6 +29,8 @@ namespace Kogane
 
         public void OpenComplete()
         {
+            if ( Application.isBatchMode ) return;
+
             EditorUtility.DisplayDialog
             (
                 title: m_title,
