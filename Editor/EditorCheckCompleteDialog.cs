@@ -38,5 +38,17 @@ namespace Kogane
                 ok: "OK"
             );
         }
+
+        public void OpenComplete( bool isSuccess )
+        {
+            if ( Application.isBatchMode ) return;
+
+            EditorUtility.DisplayDialog
+            (
+                title: m_title,
+                message: isSuccess ? $"{m_message}に成功しました" : $"{m_message}に失敗しました",
+                ok: "OK"
+            );
+        }
     }
 }
