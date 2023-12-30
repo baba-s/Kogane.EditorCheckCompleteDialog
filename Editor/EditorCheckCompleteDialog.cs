@@ -50,5 +50,17 @@ namespace Kogane
                 ok: "OK"
             );
         }
+
+        public void Open( string message )
+        {
+            if ( Application.isBatchMode ) return;
+
+            EditorUtility.DisplayDialog
+            (
+                title: m_title,
+                message: message,
+                ok: "OK"
+            );
+        }
     }
 }
